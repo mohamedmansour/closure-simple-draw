@@ -1,0 +1,14 @@
+Closure Simple Draw 
+--------------------
+By Mohamed Mansour
+
+ABOUT:
+ This project is there to assist people who want to implement Undo and Redo functionality in Closure.
+ Created the drawing utility to draw random circles to illustrate its purpose.
+
+
+INSTALL:
+  To install, make sure to point the goog/base.js file in render.html.
+  Or you can either move the location and rerun deps:
+    python ../calcdeps.py -o deps -p js/sketcher/ > js/deps.js
+
