@@ -1,4 +1,4 @@
-goog.provide('sketch.Widget');
+goog.provide('sketch.Canvas');
 
 goog.require('goog.dom');
 goog.require('goog.graphics');
