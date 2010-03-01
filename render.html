@@ -1,0 +1,71 @@
+<html> 
+  <head> 
+    <script src="js/goog/base.js"></script> 
+    <script src="js/deps.js"></script> 
+    <script>
+      goog.require('sketch.Canvas');
+    </script>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+      #control {
+        background-color: #ccc;
+      }
+      #sketch {
+        margin-left: auto;
+        margin-right: auto;
+        width: 600px;
+        height: 400px;
+      }
+      #canvas {
+        background-color: white;
+      }
+      #history {
+        background-color: blue;
+        color: white;
+        height: 100px;
+        overflow: auto;
+      }
+      #history p {
+        margin: 0;
+        padding: 0 10px;
+      }
+      #history p:hover {
+        background-color: #eee;
+        color: black;
+      }
+    </style>
+  </head> 
+  <body>
+    <div id="sketch">
+      <h1>Canvas</h1>
+      <div id="control">
+        <center>
+          <input id="undo" type="button" value="undo" onclick="onUndo()"/>
+          <input id="redo" type="button" value="redo" onclick="onRedo()"/>
+          <input id="clear" type="button" value="clear" onclick="onClear()"/>
+        </center>
+      </div>
+      <div id="canvas"></div>
+      <h1>History</h1>
+      <div id="history">
+      </div>
+    </div>
+    <script> 
+      var comp = new sketch.Canvas(600, 400);
+      comp.decorate(goog.dom.$('canvas'));
+      
+      function onUndo() {
+        comp.undo();
+      }
+      function onRedo() {
+        comp.redo();
+      }
+      function onClear() {
+        comp.clear();
+      }
+    </script> 
+  </body> 
+</html>
